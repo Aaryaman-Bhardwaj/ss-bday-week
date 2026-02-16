@@ -17,6 +17,15 @@ export default function Home() {
       "Happy Birthday my love ❤️\nThis week is all about making you smile."
   };
 
+  useEffect(() => {
+    const saved = localStorage.getItem("bday_choice_day_" + gift.day);
+    if (saved) {
+      setChoice(saved);
+      setDone(true);
+    }
+  }, []);
+  
+
   // floating hearts
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,11 +42,23 @@ export default function Home() {
     });
   }
 
-  function select(c) {
+  async function select(c) {
     setChoice(c);
+  
+    await fetch("/api/choice", {
+      method: "POST",
+      body: JSON.stringify({
+        day: gift.day,
+        choice: c
+      })
+    });
+  
+    localStorage.setItem("bday_choice_day_"+gift.day, c);
+  
     if (c === "accept") celebrate();
     setTimeout(() => setDone(true), 700);
   }
+  
 
   if (done) {
     return (
