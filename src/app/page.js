@@ -12,7 +12,7 @@ export default function Home() {
   const gift = {
     day: 1,
     title: "Mystery Surprise",
-    image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a",
+    image: "/gifts/day1.jpg",
     message:
       "Happy Birthday my love ❤️\nThis week is all about making you smile."
   };
