@@ -103,7 +103,7 @@ export default function Home() {
         className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl p-8 max-w-md"
       >
         <h1 className="text-5xl font-extrabold mb-2">🎂 Happy Birthday 🎂</h1>
-        <h2 className="text-2xl font-semibold mb-4">Day {gift.day} Surprise 💝</h2>
+        <h2 className="text-2xl font-semibold mb-4">Day {gift.day} Monday Surprise 💝</h2>
 
         <div className="mb-4 flex justify-center">
   <ScratchReveal image={gift.image}/>
